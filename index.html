@@ -1,90 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MK Creators | Photo Framing</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fefefe;
-      color: #333;
-    }
-    header {
-      background: #000;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-      color: #aaa;
-    }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .about, .contact {
-      margin-top: 2rem;
-    }
-    footer {
-      background: #000;
-      color: #aaa;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>MK creators - Custom Photo Framing in Sri Lanka</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://placehold.co/1920x1080/111827/ffffff?text=Modern+Artistic+Frames');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .cyan-glow {
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.3), 0 0 5px rgba(34, 211, 238, 0.2);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>MK Creators</h1>
-    <p>Custom Photo Framing for Your Precious Moments</p>
-  </header>
+<body class="bg-gray-900 text-gray-200">
 
-  <section>
-    <h2>About Us</h2>
-    <p class="about">
-      At MK Creators, we specialize in high-quality, custom photo framing that turns your memories into timeless decor.
-      Whether it's family portraits, wedding photos, certificates, or artwork, we help preserve your story with style.
-    </p>
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="img/logo.png" alt="MK creators Logo" class="h-12 w-12 rounded-full object-cover border-2 border-cyan-400">
+                <span class="text-2xl font-bold text-white font-display">MK creators</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-gray-300 hover:text-cyan-400 transition duration-300">Services</a>
+                <a href="#pricing" class="text-gray-300 hover:text-cyan-400 transition duration-300">Pricing</a>
+                <a href="#gallery" class="text-gray-300 hover:text-cyan-400 transition duration-300">Gallery</a>
+                <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900/90">
+            <a href="#services" class="block py-3 px-6 text-center text-gray-300 hover:bg-gray-800 hover:text-cyan-400 transition duration-300">Services</a>
+            <a href="#pricing" class="block py-3 px-6 text-center text-gray-300 hover:bg-gray-800 hover:text-cyan-400 transition duration-300">Pricing</a>
+            <a href="#gallery" class="block py-3 px-6 text-center text-gray-300 hover:bg-gray-800 hover:text-cyan-400 transition duration-300">Gallery</a>
+            <a href="#contact" class="block py-3 px-6 text-center text-gray-300 hover:bg-gray-800 hover:text-cyan-400 transition duration-300">Contact</a>
+        </div>
+    </header>
 
-    <h2>Our Work</h2>
-    <div class="gallery">
-      <img src="https://via.placeholder.com/300x200?text=Frame+1" alt="Framed Photo 1" />
-      <img src="https://via.placeholder.com/300x200?text=Frame+2" alt="Framed Photo 2" />
-      <img src="https://via.placeholder.com/300x200?text=Frame+3" alt="Framed Photo 3" />
-      <img src="https://via.placeholder.com/300x200?text=Frame+4" alt="Framed Photo 4" />
-    </div>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white min-h-screen flex items-center">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-7xl font-bold font-display mb-4 animate-fade-in-down">Modern Framing for Modern Memories</h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up">We deliver premium, custom-framed photos across Sri Lanka. Elevate your space with our sleek and stylish designs.</p>
+                <a href="#pricing" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 transform hover:scale-105 cyan-glow">Explore Designs</a>
+            </div>
+        </section>
 
-    <h2>Contact Us</h2>
-    <p class="contact">
-      📞 Phone: +94 77 123 4567<br/>
-      📧 Email: mkcreators@example.com<br/>
-      📍 Location: Colombo, Sri Lanka
-    </p>
-  </section>
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold font-display mb-4 text-white">What We Do</h2>
+                <div class="w-24 h-1 bg-cyan-500 mx-auto mb-12"></div>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="p-8 bg-gray-900 rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <svg class="w-16 h-16 mx-auto mb-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-3 text-white">Photo Printing</h3>
+                        <p class="text-gray-400">Archival-quality prints with stunning clarity and color depth.</p>
+                    </div>
+                    <div class="p-8 bg-gray-900 rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
+                         <svg class="w-16 h-16 mx-auto mb-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-3 text-white">Custom Framing</h3>
+                        <p class="text-gray-400">Hand-crafted frames in modern designs to protect and showcase your art.</p>
+                    </div>
+                    <div class="p-8 bg-gray-900 rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <svg class="w-16 h-16 mx-auto mb-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2-2h8zM17 20h-4a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v11a2 2 0 01-2 2z"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-3 text-white">Island-wide Delivery</h3>
+                        <p class="text-gray-400">Safe, secure, and fast delivery to any location in Sri Lanka.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    &copy; 2025 MK Creators. All rights reserved.
-  </footer>
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center font-display mb-4 text-white">Our Frames & Pricing</h2>
+                <div class="w-24 h-1 bg-cyan-500 mx-auto mb-16"></div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+                    <!-- Base Frame Price Card -->
+                    <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden group relative" style="background-image: url('Gallery/1.jpeg'); background-size: cover; background-position: center;">
+                      <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
+                        <div class="relative z-10">
+                        <img src="https://placehold.co/400x300/transparent/9ca3af?text=Wedding+Portrait" alt="18x12 Frame" class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">18" × 12"</h3>
+                            <p class="text-gray-500 text-lg line-through">RS. 3800</p>
+                            <p class="text-cyan-400 font-bold text-3xl mb-4">RS. 3400</p>
+                             <a href="https://wa.me/94785682085?text=I'd%20like%20to%20order%20the%2018x12%20frame." target="_blank" class="w-full bg-gray-700 hover:bg-cyan-500 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Order Now</a>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden group relative" style="background-image: url('Gallery/1.jpeg'); background-size: cover; background-position: center;">
+                      <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
+                        <div class="relative z-10">
+                        <img src="https://placehold.co/400x300/transparent/9ca3af?text=Family+Photo" alt="15x12 Frame" class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">15" × 12"</h3>
+                            <p class="text-gray-500 text-lg line-through">RS. 3000</p>
+                            <p class="text-cyan-400 font-bold text-3xl mb-4">RS. 2800</p>
+                             <a href="https://wa.me/94785682085?text=I'd%20like%20to%20order%20the%2015x12%20frame." target="_blank" class="w-full bg-gray-700 hover:bg-cyan-500 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Order Now</a>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden group relative" style="background-image: url('Gallery/1.jpeg'); background-size: cover; background-position: center;">
+                      <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
+                        <div class="relative z-10">
+                        <img src="https://placehold.co/400x300/transparent/9ca3af?text=Landscape+Shot" alt="15x10 Frame" class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">15" × 10"</h3>
+                            <p class="text-gray-500 text-lg line-through">RS. 2800</p>
+                            <p class="text-cyan-400 font-bold text-3xl mb-4">RS. 2600</p>
+                            <a href="https://wa.me/94785682085?text=I'd%20like%20to%20order%20the%2015x10%20frame." target="_blank" class="w-full bg-gray-700 hover:bg-cyan-500 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Order Now</a>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden group relative" style="background-image: url('Gallery/1.jpeg'); background-size: cover; background-position: center;">
+                      <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
+                        <div class="relative z-10">
+                        <img src="https://placehold.co/400x300/transparent/9ca3af?text=Office+Decor" alt="12x8 A4 Frame" class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">12" × 8" (A4)</h3>
+                            <p class="text-gray-500 text-lg line-through">RS. 2200</p>
+                            <p class="text-cyan-400 font-bold text-3xl mb-4">RS. 1900</p>
+                             <a href="https://wa.me/94785682085?text=I'd%20like%20to%20order%20the%2012x8%20(A4)%20frame." target="_blank" class="w-full bg-gray-700 hover:bg-cyan-500 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Order Now</a>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden group relative" style="background-image: url('Gallery/1.jpeg'); background-size: cover; background-position: center;">
+                      <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
+                        <div class="relative z-10">
+                        <img src="https://placehold.co/400x300/transparent/9ca3af?text=Gift+Frame" alt="8x6 A5 Frame" class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold mb-2 text-white">8" × 6" (A5)</h3>
+                            <p class="text-gray-500 text-lg line-through">RS. 1800</p>
+                            <p class="text-cyan-400 font-bold text-3xl mb-4">RS. 1600</p>
+                             <a href="https://wa.me/94785682085?text=I'd%20like%20to%20order%20the%208x6%20(A5)%20frame." target="_blank" class="w-full bg-gray-700 hover:bg-cyan-500 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Order Now</a>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden group relative" style="background-image: url('Gallery/1.jpeg'); background-size: cover; background-position: center;">
+                      <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
+                        <div class="relative z-10">
+                              <img src="https://placehold.co/400x300/transparent/9ca3af?text=Wedding+Portrait" 
+                                  alt="18x12 Frame" 
+                                  class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110" 
+                                  onerror="this.onerror=null;this.src='https://placehold.co/400x300';">
+
+                            <div class="p-6 text-center">
+                                  <h3 class="text-xl font-semibold mb-2 text-white">18" × 12"</h3>
+                                  <p class="text-gray-500 text-lg line-through">RS. 3800</p>
+                                  <p class="text-cyan-400 font-bold text-3xl mb-4">RS. 3400</p>
+                                  <a href="https://wa.me/94785682085?text=I'd%20like%20to%20order%20the%2018x12%20frame." 
+                                    target="_blank" 
+                                    class="w-full bg-gray-700 hover:bg-cyan-500 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                                    Order Now
+                                  </a>
+                            </div>
+                        </div>
+                      </div> -->
+                  
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center font-display mb-4 text-white">Our Work</h2>
+                <div class="w-24 h-1 bg-cyan-500 mx-auto mb-16"></div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="grid gap-4">
+                        <div class="group"><img class="h-auto max-w-full rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:opacity-80" src="https://placehold.co/500x700/374151/9ca3af?text=Gallery+1" alt=""></div>
+                        <div class="group"><img class="h-auto max-w-full rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:opacity-80" src="https://placehold.co/500x500/4b5563/9ca3af?text=Gallery+2" alt=""></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div class="group"><img class="h-auto max-w-full rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:opacity-80" src="https://placehold.co/500x500/374151/9ca3af?text=Gallery+3" alt=""></div>
+                        <div class="group"><img class="h-auto max-w-full rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:opacity-80" src="https://placehold.co/500x700/4b5563/9ca3af?text=Gallery+4" alt=""></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div class="group"><img class="h-auto max-w-full rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:opacity-80" src="https://placehold.co/500x700/374151/9ca3af?text=Gallery+5" alt=""></div>
+                        <div class="group"><img class="h-auto max-w-full rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:opacity-80" src="https://placehold.co/500x500/4b5563/9ca3af?text=Gallery+6" alt=""></div>
+                    </div>
+                     <div class="grid gap-4">
+                        <div class="group"><img class="h-auto max-w-full rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:opacity-80" src="https://placehold.co/500x500/374151/9ca3af?text=Gallery+7" alt=""></div>
+                        <div class="group"><img class="h-auto max-w-full rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:opacity-80" src="https://placehold.co/500x700/4b5563/9ca3af?text=Gallery+8" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold font-display mb-4 text-white">Get In Touch</h2>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Have questions or a custom request? Contact us on WhatsApp or check out our work on Facebook.</p>
+                <div class="flex justify-center items-center flex-wrap gap-4">
+                    <a href="https://wa.me/94785682085" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg flex items-center space-x-2 transition-transform transform hover:scale-105">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.902-.539-5.586-1.54l-6.331 1.666zm5.331-5.547l.348.203c1.556.913 3.373 1.393 5.253 1.393 5.438 0 9.875-4.437 9.875-9.875 0-5.437-4.437-9.875-9.875-9.875s-9.875 4.438-9.875 9.875c0 1.933.57 3.781 1.623 5.34l.22.336-1.041 3.812 3.812-1.04zm6.591-3.693c-.333-.167-1.975-1.002-2.282-1.118-.306-.117-.527-.167-.748.167-.221.333-.863 1.118-1.061 1.336-.198.221-.397.249-.748.083-.35-.167-1.484-.559-2.825-1.743-1.045-.923-1.748-2.06-1.975-2.411-.227-.351-.018-.54.148-.718.153-.166.333-.417.499-.625.167-.208.222-.351.333-.583.111-.232.056-.417-.028-.584-.083-.167-.748-1.825-.975-2.47-.227-.644-.454-.551-.624-.551-.17 0-.348-.028-.528-.028-.179 0-.454.083-.69.375-.235.292-.919 1.002-1.085 2.411-.167 1.408.083 2.81 1.259 3.766 1.144.93 2.35 1.57 3.53 1.848.417.092.79.139 1.164.139.46 0 1.484-.209 1.691-1.265.208-1.057.208-1.944.152-2.111-.056-.167-.197-.249-.417-.334z"/></svg>
+                        <span>WhatsApp Us</span>
+                    </a>
+                    <a href="https://web.facebook.com/share/p/M1QvGnCgy2q3QGAM/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg flex items-center space-x-2 transition-transform transform hover:scale-105">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://wa.me/c/94785682085" target="_blank" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg flex items-center space-x-2 transition-transform transform hover:scale-105">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>View Catalog</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 border-t border-gray-700">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2024 MK creators. All Rights Reserved. Crafted with ❤️ in Sri Lanka.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/94785682085" target="_blank" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 bg-white p-2 rounded-full shadow-lg z-50 transition-transform transform hover:scale-110">
+        <img src="https://img.icons8.com/3d-fluency/94/whatsapp.png" alt="WhatsApp" class="w-12 h-12">
+    </a>
+    
+    <script>
+        // JavaScript for mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.getElementsByTagName('a');
+        for(let i = 0; i < mobileLinks.length; i++) {
+            mobileLinks[i].addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+    </script>
+
 </body>
 </html>
